@@ -1,0 +1,17 @@
+<h1>Create new pet</h1>
+<form action="/pets/create" method="POST">
+  <label for="name">Name
+    <input type="text" id="name" name="name" />
+  </label>
+  <label for="age">Age
+    <input type="number" id="age" name="age" />
+  </label>
+  <div>
+    <input type="radio" id="neutered1" name="neutered" value="red" />
+    <label for="neutered1">Yes</label>
+
+    <input type="radio" id="neutered2" name="neutered" value="blue" />
+    <label for="neutered2">No</label>
+  </div>
+  <button type="submit">Create pet</button>
+</form>

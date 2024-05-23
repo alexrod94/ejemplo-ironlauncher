@@ -1,0 +1,29 @@
+<h1>Pets home page</h1>
+<p>Ver solo castrados</p>
+<form method="GET">
+  <label for="name">Name
+    <input type="text" name="name" id="name" required />
+  </label>
+  <div>
+    <input type="radio" id="neutered1" name="neutered" value="true" />
+    <label for="neutered1">Yes</label>
+    <input type="radio" id="neutered2" name="neutered" value="false" />
+    <label for="neutered2">No</label>
+    <button type="submit">Filter</button>
+  </div>
+</form>
+
+{{#if data}}
+  <ul>
+    {{#each data}}
+      {{#if this.neutered}}
+        <li class="neutered">{{this.name}}</li>
+      {{else}}
+        <li>{{this.name}}</li>
+      {{/if}}
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No data...</p>
+{{/if}}
+<button><a href="/pets/create">Create new pet</a></button>
